@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://thymeleaf.org">
+  <head>
+    <title>Crime Report</title>
+  </head>
+  <body>
+    <table>
+      <tr>
+        <th>Crime Description</th>
+        <th>Instance Number</th>
+        <th>Crime Rate</th>
+        <th>Yearly Crime Rate Change</th>
+        <th>Decade Crime Rate Change</th>
+      </tr>
+      <tr th:each="row : ${rows}">
+        <td th:text="${row.crimeDescription}"></td>
+        <td th:text="${row.crimeInstanceNumber}"></td>
+        <td th:text="${row.crimeRate}"></td>
+        <td th:text="${row.yearlyCrimeRateChange}"></td>
+        <td th:text="${row.decadeCrimeRateChange}"></td>
+      </tr>
+    </table>
+  </body>
+</html>

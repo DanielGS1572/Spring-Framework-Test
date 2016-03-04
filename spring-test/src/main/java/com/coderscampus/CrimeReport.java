@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
@@ -18,17 +17,12 @@ public class CrimeReport
   @Value("${report.filename}")
   private String filename;
   
-  @Autowired
-  @Qualifier("descReport")
-  private CrimeReportResult crimeReportResult;
-  
   private FileProcessorService fileProcessorService;
   
   public void generateReport () 
   {
     System.out.println("Loading filename: " + filename);
     this.setRows(fileProcessorService.processFile(filename));
-    System.out.println(crimeReportResult.getSorting());
   }
   
   public List<CrimeReportDataRow> getRows()
