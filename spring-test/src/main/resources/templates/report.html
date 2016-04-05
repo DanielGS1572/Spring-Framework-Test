@@ -4,6 +4,16 @@
     <title>Crime Report</title>
   </head>
   <body>
+    <form action="" method="POST">
+      <button name="sortingBtn" value="asc">Asc</button>
+      <button name="sortingBtn" value="desc">Desc</button>
+    </form>
+    
+    <form action="" method="POST" th:object="${rfbo}">
+      <input type="text" th:field="${rfbo.sortingOrder}"/>
+      <button>Submit</button>
+    </form>
+    
     <table>
       <tr>
         <th>Crime Description</th>
