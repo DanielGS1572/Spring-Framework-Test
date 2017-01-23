@@ -1,11 +1,14 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
+	<!-- Estos campos se crearon cuando se creó el proyecto de tipo Maven se 
+		le dió la opción de crear un proyecto simple -->
 	<groupId>com.coderscampus</groupId>
 	<artifactId>spring-test</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Spring Framework Test</name>
 
+	<!-- Se debe de buscar en internet el contexto de maven (maven context) -->
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework</groupId>
