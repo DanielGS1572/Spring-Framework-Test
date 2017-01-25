@@ -2,12 +2,14 @@ package com.coderscampus;
 
 public class CrimeReportDataRow
 {
-  private String crimeDescription;
+	//genera getters y setters
+  private String crimeDescription;		//1er columna
   private Integer crimeInstanceNumber;
   private Integer crimeRate;
   private Integer yearlyCrimeRateChange;
   private Integer decadeCrimeRateChange;
-  
+  // esta clase es el pojo para mapear las columnas (resultado del FileProcessorService)
+  // los pojos seran consumidos por la clase CrimeReport
   public CrimeReportDataRow(String[] data)
   {
     this.setCrimeDescription(data[0]);
