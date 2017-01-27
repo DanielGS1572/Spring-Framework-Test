@@ -13,14 +13,14 @@ import org.springframework.stereotype.Component;
 @Scope("prototype")
 public class CrimeReport
 {
-  private List<CrimeReportDataRow> rows = new ArrayList<>();
+  private List<CrimeReportDataRow> rows = new ArrayList<CrimeReportDataRow>();
   
   @Value("${report.filename}")
   private String filename;
   
   @Autowired
   @Qualifier("descReport")
-  private CrimeReportResult crimeReportResult;
+  private CrimeReportResult crimeReportResult;		//--> se puede hacer match con el nombre del bean sin necesidad de un Qualifier
   
   private FileProcessorService fileProcessorService;
   

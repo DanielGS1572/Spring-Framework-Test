@@ -15,7 +15,7 @@ public class FileProcessorService
   
   public List<CrimeReportDataRow> processFile (String filename)
   {
-    List<CrimeReportDataRow> rows = new ArrayList<>();
+    List<CrimeReportDataRow> rows = new ArrayList<CrimeReportDataRow>();
     
     List<String> lines = frs.readFile(filename);
     for (String line : lines)
