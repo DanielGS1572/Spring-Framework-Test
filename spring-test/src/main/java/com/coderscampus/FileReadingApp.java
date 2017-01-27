@@ -47,6 +47,9 @@ public class FileReadingApp {
 		
 		CrimeReport crimeReport = (CrimeReport) context.getBean("crimeReport");
 		crimeReport.generateReport();
+		for(CrimeReportDataRow row :crimeReport.getRows()){
+			System.out.println(row.toString());
+		}
 		
 		reports.add((CrimeReport) context.getBean("crimeReport"));		//crea una instancia de CrimeReport
 		reports.add((CrimeReport) context.getBean("crimeReport"));
