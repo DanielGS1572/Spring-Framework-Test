@@ -1,6 +1,4 @@
 <!DOCTYPE HTML>
-<!-- th es un namespace (xmlns = xml namespace) y es un prefijo -->
-<!-- "http://thymeleaf.org" es el Namespace URI -->
 <html xmlns:th="http://thymeleaf.org">
   <head>
     <title>Crime Report</title>
@@ -8,16 +6,14 @@
   <body>
     <table>
       <tr>
-		<!--       Encabezados -->
         <th>Crime Description</th>
         <th>Instance Number</th>
         <th>Crime Rate</th>
         <th>Yearly Crime Rate Change</th>
         <th>Decade Crime Rate Change</th>
       </tr>
-      <tr th:each="row : ${rows}">	<!-- un for each donde se le pasa la variable del hashmap que es rows (ModelMap)-->
-<!--       	No se necesita el tipo de dato que es CrimeReport (se esta iterando una lista) -->
-        <td th:text="${row.crimeDescription}"></td> <!--  El texto que se esta incluyendo a partir de thymeleaf es como si fuera dentro de <td>Hello</td> -->
+      <tr th:each="row : ${rows}">
+        <td th:text="${row.crimeDescription}"></td>
         <td th:text="${row.crimeInstanceNumber}"></td>
         <td th:text="${row.crimeRate}"></td>
         <td th:text="${row.yearlyCrimeRateChange}"></td>
