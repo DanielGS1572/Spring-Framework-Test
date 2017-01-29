@@ -23,13 +23,23 @@ public class CrimeReportController
 
   @Autowired
   private CrimeReport crimeReport;
-
+//  @RequestMapping(value = "/crimeReport") Si se tiene esta instruccion sola hace todas las siguientes instrucciones
+//  @RequestMapping(value = "/crimeReport", method = RequestMethod.POST)
+//  @RequestMapping(value = "/crimeReport", method = RequestMethod.GET)
+//  @RequestMapping(value = "/crimeReport", method = RequestMethod.DELETE)
+//  @RequestMapping(value = "/crimeReport", method = RequestMethod.HEAD)
+//  @RequestMapping(value = "/crimeReport", method = RequestMethod.OPTIONS)
+  
+  //SE DECALARA UN SOLO @RequestMapping por metodo
+  // y este metodo se ejecutara cuando se haga un get
+  // el metodo get es lo mismo que introducir la URL y presionar enter (o refresh)
   @RequestMapping(value = "/crimeReport", method = RequestMethod.GET)
+  
   public String showReport(ModelMap model)
   {
     crimeReport.generateReport();
     model.put("rows", crimeReport.getRows());
-    model.put("rfbo", new ReportFormBackingObject());
+    model.put("rfbo", new ReportFormBackingObject());	// ReportFormBackingObject() --> Es un simple pojo que se agregar al modelo
 
     // prepended text "src/main/resources/templates/"
     // actual text "report"
@@ -75,7 +85,7 @@ public class CrimeReportController
     return "report";
   }
   
-  @RequestMapping(value = "/crimeReport", method = RequestMethod.POST, params="sortingBtn=asc")
+  @RequestMapping(value = "/crimeReport", method = RequestMethod.POST, params="sortingBtn=asc") //con params se revisa que es lo que se esta enviando
   public String showReportPostAsc(ModelMap model)
   {
     List<CrimeReportDataRow> rows = crimeReport.getRows();
