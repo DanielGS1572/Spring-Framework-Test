@@ -19,7 +19,7 @@ public class CrimeReport
   
   private FileProcessorService fileProcessorService;
   
-  public void generateReport () 
+  public void generateReport()
   {
     System.out.println("Loading filename: " + filename);
     this.setRows(fileProcessorService.processFile(filename));
